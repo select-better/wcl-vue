@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 简单的一个vue的例子</h1>
+    <div id='app'>
+       <div>
+           {{ msg }}
+       </div>
+        <div>
+            {{ count }}
+        </div>
+        <h3>v-for</h3>
+        <div v-text="msg"></div>
+        <h3>v-model</h3>
+        <input v-model="msg"/>
+        <input v-model="count" />
+    </div>
+    <!-- 顺序的话就observer 和 compiler可以改变 -->
+    <script src='./dep.js'></script>
+    <script src='./watcher.js'></script>
+    <script src='./observer.js'></script>
+    <script src='./compiler.js'></script>
+    <script src='./vue.js'></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello vue',
+                count: 100,
+                person: {
+                    name: 'lisi'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
